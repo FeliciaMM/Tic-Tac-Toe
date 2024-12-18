@@ -16,8 +16,11 @@ function Gameboard(){
         }
     };
 
+    const resetBoard=()=>{
+        board = ['E','E','E','E','E','E','E','E','E'];
+    };
 
-    return {getBoard, addMark};
+    return {getBoard, addMark,resetBoard};
 }
 
 function Player(name, mark){
@@ -29,6 +32,12 @@ function Game(){
     let Player1 = Player('P1','X');
     let Player2 = Player('P2','0');
     let currentPlayer = Player1;
+
+    const newGame=()=>{
+        board.resetBoard();
+        Player1.playerChoices =[];
+        Player2.playerChoices =[];
+    }
 
     const setMark=(index,currentPlayer)=>{
         if(board.addMark(index,currentPlayer.mark)){
@@ -64,10 +73,11 @@ function Game(){
        }
 
        if(checkWin(currentPlayer.playerChoices)){
+        newGame();
         return `Player ${currentPlayer.name} won! with ${currentPlayer.playerChoices}`;
        }
        if(endTie(board)===true){
-        board.resetBoard();
+        newGame();
         return 'Game Over';
        }
 
@@ -85,6 +95,8 @@ console.log(game.playRound(3));//p2
 console.log(game.playRound(2));
 console.log(game.playRound(8));
 console.log(game.playRound(0));
+console.log(game.playRound(3));
+console.log(game.playRound(2));
 
 
 
