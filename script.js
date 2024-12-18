@@ -41,7 +41,11 @@ function Game(){
 
     const setMark=(index,currentPlayer)=>{
         if(board.addMark(index,currentPlayer.mark)){
-            currentPlayer.playerChoices.push(index);
+            if(!currentPlayer.playerChoices.includes(index)){
+                currentPlayer.playerChoices.push(index);
+            }else{
+                return "Error"
+            }
             return `Player ${currentPlayer.name} put ${currentPlayer.mark} in the ${index} cell`;
         }else{  
             return 'Invalid move';
@@ -74,7 +78,7 @@ function Game(){
 
        if(checkWin(currentPlayer.playerChoices)){
         newGame();
-        return `Player ${currentPlayer.name} won! with ${currentPlayer.playerChoices}`;
+        return `Player ${currentPlayer.name} won!`;
        }
        if(endTie(board)===true){
         newGame();
@@ -89,14 +93,15 @@ function Game(){
 
 const game = Game();
 
+//Testing
 //p1 wins
 console.log(game.playRound(1));//p1
 console.log(game.playRound(3));//p2
 console.log(game.playRound(2));
 console.log(game.playRound(8));
 console.log(game.playRound(0));
-console.log(game.playRound(3));
-console.log(game.playRound(2));
+console.log(game.playRound(8));
+
 
 
 
