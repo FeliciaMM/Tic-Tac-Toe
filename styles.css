@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .body{
@@ -10,14 +11,18 @@
 .container{
     display: flex;
     flex-direction: column;
-    min-height: 94.9vh;
-
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    bleed: 0;
 }
 
 .gameboard{
+    margin-top: 100px;
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
     width: fit-content;
+
 }
 
 .cell{
@@ -25,12 +30,27 @@
     height: 100px;
     background-color: blueviolet;
     text-align: center;
-}
+    border: 5px solid black;
+    font-size: 50px;
+    color: white;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
 
 .footer{
     margin-top: auto;
     background-color: blueviolet;
     color: aliceblue;
     text-align: center;
+    width: 100%;
     padding: 10px;
+    font-weight: bold;
+}
+
+.start-btn{
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
 }

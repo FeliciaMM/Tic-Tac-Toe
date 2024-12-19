@@ -7,7 +7,7 @@ function Gameboard(){
     for(let i =0;i<9;i++){
         let cell=document.createElement('div');
         cell.classList.add("cell");
-        board.push('E');
+        board.push(' ');
         gameboard.appendChild(cell);
         cell.dataset.index = i;
         cell.textContent = board[i];
@@ -18,7 +18,7 @@ function Gameboard(){
     const getBoard=() => board;
 
     const addMark=(index,mark)=>{
-        if(board[index] === 'E'){
+        if(board[index] === ' '){
             board[index]=mark;
             return true;
         }else{
@@ -27,8 +27,8 @@ function Gameboard(){
     };
 
     const resetBoard=()=>{
-        board = ['E','E','E','E','E','E','E','E','E'];
-        cells.forEach(cell=>cell.innerHTML='E');
+        board = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
+        cells.forEach(cell=>cell.innerHTML=' ');
     };
 
     return {getBoard, addMark,resetBoard, cells};
@@ -67,7 +67,7 @@ function Game(){
     }
 
     const endTie = (board)=>{
-        if(board.getBoard().every(cell=>cell!='E')){
+        if(board.getBoard().every(cell=>cell!=' ')){
             return true;
         }
     }
