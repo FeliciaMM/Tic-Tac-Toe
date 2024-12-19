@@ -6,6 +6,7 @@
 
 .body{
     max-height: 100vh;
+  
 }
 
 .container{
@@ -15,6 +16,8 @@
     align-items: center;
     justify-content: center;
     bleed: 0;
+    background-image: url(./v25.jpg);
+    background-size: cover;
 }
 
 .gameboard{
@@ -22,6 +25,7 @@
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
     width: fit-content;
+    position: relative;
 
 }
 
@@ -64,15 +68,19 @@
 
 
 .player1-name-div{
-    margin-right: 200px;
+    margin-right: 280px;
     margin-top: auto;
     margin-bottom: auto;
     font-size: 30px;
+    color: rgb(0, 0, 0);
+    padding-bottom: 80px;
+ 
 }
 
 .player2-name-div{
-    margin-left: 200px;
+    margin-left: 280px;
     margin-top: auto;
     margin-bottom: auto;
     font-size: 30px;
+    color: rgb(2, 0, 0);
 }
