@@ -1,4 +1,5 @@
 let gameboard = document.querySelector('.gameboard');
+let startButton = document.querySelector('.start-btn')
 
 function Gameboard(){
     let board = [];
@@ -39,11 +40,14 @@ function Player(name, mark){
 
 function Game(){
     let board = Gameboard();
-    let Player1 = Player('P1','X');
-    let Player2 = Player('P2','0');
-    let currentPlayer = Player1;
+    let Player1=Player(name,'X'); 
+    let Player2=Player(name,'0');
+    let currentPlayer;
 
     const newGame=()=>{
+        Player1.name = prompt('Player 1: Insert your name');
+        Player2.name = prompt('Player 2: Insert your name');
+        currentPlayer = Player1;
         board.resetBoard();
         Player1.playerChoices =[];
         Player2.playerChoices =[];
@@ -80,6 +84,7 @@ function Game(){
        
 
     const playRound=()=>{
+  
         board.cells.forEach(cell=>cell.addEventListener('click',()=>{
             const index = parseInt(cell.dataset.index); 
             let result = setMark(index,currentPlayer);
@@ -105,11 +110,16 @@ function Game(){
             })
         )
     }
-    return{playRound}
+    return{playRound, newGame}
 }
 
 const game = Game();
-game.playRound();
+
+startButton.addEventListener('click',()=>{
+    game.newGame();
+    game.playRound();
+})
+
 
 
 
