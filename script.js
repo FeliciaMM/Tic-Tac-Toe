@@ -1,5 +1,7 @@
 let gameboard = document.querySelector('.gameboard');
-let startButton = document.querySelector('.start-btn')
+let startButton = document.querySelector('.start-btn');
+let player1Div = document.querySelector('.player1-name-div');
+let player2Div = document.querySelector('.player2-name-div');
 
 function Gameboard(){
     let board = [];
@@ -46,7 +48,9 @@ function Game(){
 
     const newGame=()=>{
         Player1.name = prompt('Player 1: Insert your name');
+        player1Div.innerHTML=Player1.name;
         Player2.name = prompt('Player 2: Insert your name');
+        player2Div.innerHTML=Player2.name;
         currentPlayer = Player1;
         board.resetBoard();
         Player1.playerChoices =[];

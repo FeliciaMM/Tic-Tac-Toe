@@ -50,7 +50,29 @@
 }
 
 .start-btn{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin-top: 30px;
     width: 150px;
     height: 50px;
+    border-radius: 9px;
+    font-size: larger;
+}
+
+.game{
+    display: flex;
+}
+
+
+.player1-name-div{
+    margin-right: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 30px;
+}
+
+.player2-name-div{
+    margin-left: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 30px;
 }
